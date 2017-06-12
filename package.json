@@ -1,0 +1,31 @@
+{
+  "name": "react-native-billing-verifier",
+  "version": "0.1.0",
+  "description": "InApps verifier for Android",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kurtsergey/react-native-billing-verifier"
+  },
+  "main": "index.js",
+  "keywords": [
+    "react-native",
+    "react",
+    "native",
+    "inapp",
+    "billing",
+    "purchase",
+    "verify",
+    "android",
+    "bridge"
+  ],
+  "author": {
+    "name": "kurtsergey",
+    "email": "kurtsergey@gmail.com",
+    "url": "https://github.com/kurtsergey"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "jsrsasign": "^7.2.1"
+  }
+}
