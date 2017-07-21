@@ -1,0 +1,22 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "rules": {
+        "brace-style": [1, "stroustrup"],
+        "curly": [1, "all"],
+        "key-spacing": [1, { "beforeColon": false, "afterColon": true }],
+        "no-whitespace-before-property": [2],
+        "no-undef": [2],
+        "no-unused-vars": [2, { "args": "none" }],
+        "object-curly-spacing": [1, "always"],
+        "quotes": [1, "single", "avoid-escape"],
+        "space-before-blocks": [1, "always"]
+    }
+}

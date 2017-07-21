@@ -35,7 +35,7 @@ function base64toHEX(s) {
         h,
         res = '';
 
-    for (i = 0; i < raw.length; i++) {
+    for (var i = 0; i < raw.length; i++) {
         h = raw.charCodeAt(i).toString(16);
         res += h.length == 2 ? h : '0' + h;
     }
