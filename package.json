@@ -1,7 +1,7 @@
 {
   "name": "react-native-billing-verifier",
   "version": "0.2.0",
-  "description": "InApps verifier for React Native applications",
+  "description": "InApps verifier for ReactNative applications",
   "repository": {
     "type": "git",
     "url": "https://github.com/kurtsergey/react-native-billing-verifier"

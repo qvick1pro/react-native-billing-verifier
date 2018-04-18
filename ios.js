@@ -12,9 +12,8 @@ export default function verify(transactionDetails, connectKey) {
             else {
                 throw new Error('Purchase or subscribe is not verified');
             }
-        },
-        err => {
-            if (err.redirect) {
+        }, err => {
+            if (!err || err.redirect || err.error === undefined) {
                 return transactionDetails;
             }
             else {
