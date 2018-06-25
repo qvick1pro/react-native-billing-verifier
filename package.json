@@ -21,9 +21,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "base-64": "^0.1.0",
-    "iap-receipt-validator": "^1.0.6",
-    "jsrsasign": "^7.2.1"
+    "base-64": "~0.1.0",
+    "iap-receipt-validator": "~1.0.6",
+    "jsrsasign": "~7.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
