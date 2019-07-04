@@ -31,6 +31,22 @@ export default function verify(transaction, connectKey) {
         })
         .then(data => {
             if (data.receipt && data.receipt.transaction_id == transaction.transactionIdentifier) {
+                transaction = { ...transaction };
+
+                if (data.status === 21006) {
+                    if (data.is_in_billing_retry_period === '1') {
+                        transaction.state = 'grace';
+                    }
+                    else {
+                        transaction.state = 'expired';
+                    }
+                }
+                else {
+                    transaction.state = 'purchased';
+                }
+
+                transaction.autoRenewing = data.auto_renew_status === 1;
+
                 return transaction;
             }
             else {
