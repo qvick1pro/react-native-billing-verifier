@@ -2,19 +2,21 @@ import jsrsasign from 'jsrsasign';
 import base64 from 'base-64';
 
 
-export default function verify(transactionDetails, publicKeyStr) {
+export default function verify(transaction, publicKeyStr) {
     return new Promise(function (resolve, reject) {
         var sig = new jsrsasign.KJUR.crypto.Signature({ alg: 'SHA1withRSA' }),
             key = jsrsasign.KEYUTIL.getKey(formatPublicKey(publicKeyStr));
 
         sig.init(key);
-        sig.updateString(transactionDetails.receiptData);
+        sig.updateString(transaction.receiptData);
 
-        if (sig.verify(base64toHEX(transactionDetails.receiptSignature))) {
-            resolve(transactionDetails);
+        if (sig.verify(base64toHEX(transaction.receiptSignature))) {
+            resolve(transaction);
         }
         else {
-            reject(new Error('Purchase or subscribe is not verified'));
+            let err = new Error('Purchase or subscribe is not verified');
+            err.transactionDetails = transaction;
+            reject(err);
         }
     });
 }
