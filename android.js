@@ -1,4 +1,4 @@
-import jsrsasign from 'jsrsasign';
+import jsrsasign from 'jsrsasign-hermes';
 import base64 from 'base-64';
 
 
@@ -36,7 +36,7 @@ function formatPublicKey(publicKeyStr) {
     s = '-----BEGIN PUBLIC KEY-----\n' + s + '\n-----END PUBLIC KEY-----';
 
     return s;
-};
+}
 
 
 function base64toHEX(s) {
